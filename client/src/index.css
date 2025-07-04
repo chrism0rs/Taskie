@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(350, 100%, 97%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(350, 30%, 90%);
+  --input: hsl(350, 30%, 90%);
+  --primary: hsl(348, 83%, 47%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(350, 100%, 97%);
+  --secondary-foreground: hsl(20, 14.3%, 4.1%);
+  --accent: hsl(350, 100%, 97%);
+  --accent-foreground: hsl(20, 14.3%, 4.1%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(348, 83%, 47%);
+  --radius: 1rem;
+  
+  /* Custom pink theme colors */
+  --baby-pink: hsl(350, 100%, 94%);
+  --light-pink: hsl(350, 100%, 97%);
+  --cherry-red: hsl(348, 83%, 47%);
+  --wine-red: hsl(0, 69%, 42%);
+  --soft-white: hsl(0, 0%, 99%);
+  --soft-gray: hsl(350, 20%, 98%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(348, 83%, 47%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 1rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    background: linear-gradient(135deg, var(--baby-pink) 0%, var(--light-pink) 50%, var(--soft-white) 100%);
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .floral-bg {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="%23FFB6C1" opacity="0.3"/><circle cx="80" cy="30" r="1.5" fill="%23FFC0CB" opacity="0.4"/><circle cx="30" cy="70" r="1.8" fill="%23FFB6C1" opacity="0.3"/><circle cx="70" cy="80" r="1.2" fill="%23FFC0CB" opacity="0.4"/><circle cx="45" cy="45" r="1" fill="%23FFB6C1" opacity="0.2"/></svg>');
+    background-size: 200px 200px;
+    background-repeat: repeat;
+  }
+  
+  .card-hover {
+    transition: all 0.3s ease;
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px hsl(348, 83%, 47%, 0.1);
+  }
+  
+  .celebration-bounce {
+    animation: celebration-bounce 0.6s ease-in-out;
+  }
+  
+  @keyframes celebration-bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+  }
+  
+  .cute-shadow {
+    box-shadow: 0 4px 15px hsl(350, 100%, 94%, 0.6);
+  }
+  
+  .wine-gradient {
+    background: linear-gradient(135deg, var(--cherry-red) 0%, var(--wine-red) 100%);
+  }
+  
+  .study-mode-bg {
+    background: linear-gradient(135deg, var(--light-pink) 0%, var(--baby-pink) 100%);
+  }
+  
+  .baby-pink {
+    color: var(--baby-pink);
+  }
+  
+  .bg-baby-pink {
+    background-color: var(--baby-pink);
+  }
+  
+  .light-pink {
+    color: var(--light-pink);
+  }
+  
+  .bg-light-pink {
+    background-color: var(--light-pink);
+  }
+  
+  .cherry-red {
+    color: var(--cherry-red);
+  }
+  
+  .bg-cherry-red {
+    background-color: var(--cherry-red);
+  }
+  
+  .wine-red {
+    color: var(--wine-red);
+  }
+  
+  .bg-wine-red {
+    background-color: var(--wine-red);
+  }
+  
+  .soft-white {
+    color: var(--soft-white);
+  }
+  
+  .bg-soft-white {
+    background-color: var(--soft-white);
+  }
+  
+  .soft-gray {
+    color: var(--soft-gray);
+  }
+  
+  .bg-soft-gray {
+    background-color: var(--soft-gray);
+  }
+}
